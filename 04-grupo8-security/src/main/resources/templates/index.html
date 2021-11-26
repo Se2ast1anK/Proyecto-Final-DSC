@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link th:href="@{/styles/main.css}" rel="stylesheet" />
+
+    <title>RETI - ¡QUE NADA TE IMPIDA VIVIR SALUDABLE!</title>
+</head>
+<body>
+
+<div th:replace="fragments/header :: header(currentPage = 'home', isUserAuthenticated = ${isUserAuthenticated}, username = ${username})"></div>
+
+<!-- Section Contenedores   -->
+<section>
+    <div class="px-4 pt-5 my-5 text-center border-bottom">
+        <h1 class="display-4 fw-bold">¡QUE NADA TE IMPIDA VIVIR SALUDABLE!</h1>
+        <div class="col-lg-9 mx-auto">
+            <p class="lead mb-6">
+                RETI es una página web de cocina para novatos en la que podrás encontrar las más sencillas recetas para poder disfrutar de tus platillos favoritos desde casa.<br />
+                Publicamos recetas simples y rápidas que te ayudarán a que te des esos gustos sin tener que salir a un restaurante.<br />
+                Además, podrás acceder a tips que te compartirán otros usuarios para que puedas covertirte en todo un experto de la cocina en poco tiempo.
+            </p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+                <a th:href="@{/admin/recipes}" class="btn btn-primary btn-lg px-4 me-sm-3"> Ver y Crear Recetas</a>
+                <a th:href="@{/admin/tips}" class="btn btn-outline-secondary btn-lg px-4"> Ver y Crear Tips</a>
+
+            </div>
+        </div>
+        <div class="overflow-hidden" style="max-height: 30vh;">
+            <div class="container px-5">
+                <img th:src="@{/img/pexels-ella-olsson-1640774-min.jpg}" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+            </div>
+        </div>
+    </div>
+
+    <div class="container px-4 py-5" id="featured-3">
+        <h2 class="pb-2 border-bottom">Ingresa</h2>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+            <div class="feature col">
+                <div class="feature-icon bg-primary bg-gradient">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
+                </div>
+                <h2>Administrador</h2>
+                <p>Ingresa como administrador de la página.</p>
+                <a th:href="@{/admin/admins}" class="btn btn-primary btn-sm">Entrar</a>
+            </div>
+            <div class="feature col">
+                <div class="feature-icon bg-primary bg-gradient">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#people-circle"/></svg>
+                </div>
+                <h2>Usuario</h2>
+                <p>Disfruta de tus platos preferidos haciéndolos tú mismo.</p>
+                <a th:href="@{/admin/users}" class="btn btn-primary btn-sm">Entrar</a>
+            </div>
+        </div>
+    </div>
+
+    <!--<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="..." class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>Some representative placeholder content for the first slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Second slide label</h5>
+                    <p>Some representative placeholder content for the second slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>-->
+    <div th:switch="recipes" class="card-group">
+        <tr th:each=" recipe : ${recipes}  ">
+    <div class="card-group">
+        <div class="card">
+            <div class="card-footer text-muted text-end" th:text="${recipe.publication}"></div>
+            <img th:src="${recipe.urlImagephoto}">
+            <div class="card-body">
+                <h5 class="card-title" th:text="${recipe.title}"></h5>
+                <p class="card-text" th:text="${recipe.publication}"></p>
+                <a th:href="@{/recipes}" class="btn btn-primary btn-sm">Ver Recetas</a>
+            </div>
+        </div>
+     <!--   <div class="card">
+            <img th:src="@{/img/pexels-pixabay-357573-min.jpg}" class="card-img-top" alt="..." loading="lazy">
+            <div class="card-body">
+                <h5 class="card-title">Panqueques caseros</h5>
+                <p class="card-text">Para que puedas engreir a todos en la casa, haz estos deliciosos panqueques en menos de 1 hora y acompáñalos con miel y tus frutas faoritas.</p>
+                <p class="card-text"><small class="text-muted">Última actualización: hace 3 mins</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img th:src="@{/img/pexels-jonathan-borba-2983099-min.jpg}" class="card-img-top" alt="..." loading="lazy">
+            <div class="card-body">
+                <h5 class="card-title">Hamburguesa con queso y tocino</h5>
+                <p class="card-text">¿Con ganas de darte uno de esos gustos culposos? Atrévete a preparar este tremendo hamburguesón con queso, tocino, cebollas y pepinillos.</p>
+                <p class="card-text"><small class="text-muted">Última actualización: hace 3 mins</small></p>
+            </div>
+        </div> -->
+    </div>
+
+    <div class="container px-4 py-5" id="suscribe-newsletter">
+        <h2 class="pb-2 border-bottom">¡Los mejores tips de cocina!</h2>
+        <div class="row g-4 row-cols-1 row-cols-lg-12">
+            <div class="feature col-12">
+                <p>Suscríbete a nuestro newsletter</p>
+                <form>
+                    <input type="email" placeholder="user@email.com" style="width: 50%;" />
+                    <button type="submit" class="btn btn-primary btn-sm">Suscribirme</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!--index foto texto y fecha  -->
+<!--<section>
+    <div th:switch="recipes" class="card-group">
+        <tr th:each=" recipe : ${recipes}  ">
+            <div class="product-stripe">
+                <div class="stripe-container">
+                    <div class="container mt-9 mb-9">
+                        <div>
+                            <div>
+                                <div class="card">
+                                    <div class="card-footer text-muted text-end" th:text="${recipe.publication}"></div>
+                                    <img th:src="${recipe.urlImagephoto}">
+                                    <div
+                                            title="comida presencial 1"
+                                            class="cover cover-small">
+
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title" th:text="${recipe.title}"></h5>
+                                        <p class="card-text" th:text="${recipe.description}"></p>
+                                        <a th:href="@{/recipes}" class="btn btn-primary btn-sm">Ver Recetas</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </tr>
+    </div>
+</section> -->
+<!--tips igual -->
+</section>
+<section>
+    <div th:switch="tips" class="card-group">
+        <tr th:each=" tip : ${tips}  ">
+    <div class="product-stripe">
+        <div class="stripe-container">
+            <div class="container mt-9 mb-9">
+                <div>
+                    <div>
+                        <div class="card">
+                            <div class="card-footer text-muted text-end" th:text="${tip.publication}"></div>
+                          <!--  <img th:src="${tip.urlImage}"> -->
+                            <div
+                                    title="comida presencial 1"
+                                 class="cover cover-small">
+
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title" th:text="${tip.title}"></h5>
+                                <p class="card-text" th:text="${tip.document}"></p>
+                                <a th:href="@{/tips}" class="btn btn-primary btn-sm">Ver Tips</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </tr>
+    </div>
+</section>
+<div th:replace="fragments/footer :: footer"></div>
+
+</body>
+</html>

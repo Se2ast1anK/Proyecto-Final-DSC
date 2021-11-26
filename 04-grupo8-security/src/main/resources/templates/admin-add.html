@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link th:href="@{/styles/main.css}" rel="stylesheet" />
+
+    <title>Add Admins - RETI</title>
+</head>
+<body>
+
+<div th:replace="fragments/header :: header(currentPage = 'admins-add', isUserAuthenticated = ${isUserAuthenticated}, username = ${username})"></div>
+
+<section>
+<div class="container">
+    <h3>Nuevo Admin</h3>
+    <!-- Formulario para enviar, mas usado en editar algo -->
+    <div>
+        <form action="#" method="post" th:action="@{/admin/admins/save}" th:object="${admin}">
+
+            <div class="form-group">
+                <label for="Id_Admin">Id_Admin</label>
+                <input type="text" class="form-control" id="Id_Admin" th:field="*{Id_Admin}"
+                th:readonly="true">
+            </div>
+            <div class="form-group">
+                <label for="Name">Name</label>
+                <input type="text" class="form-control" id="Name" th:field="*{Name}">
+            </div>
+            <div class="form-group">
+                <label for="FirstName">FirstName</label>
+                <input type="text" class="form-control" id="FirstName" th:field="*{FirstName}">
+            </div>
+            <div class="form-group">
+                <label for="LastName">LastName</label>
+                <input type="text" class="form-control" id="LastName" th:field="*{LastName}">
+            </div>
+            <div class="form-group">
+                <label for="Age">Age</label>
+                <input type="text" class="form-control" id="Age" th:field="*{Age}">
+            </div>
+            <div class="form-group">
+                <label for="Address">Address</label>
+                <input type="text" class="form-control" id="Address" th:field="*{Address}">
+            </div>
+            <div class="form-group">
+                <label for="Sex">Sex</label>
+                <input type="text" class="form-control" id="Sex" th:field="*{Sex}">
+            </div>
+
+
+
+        <button type="submit" class="btn btn-primary">Agregar</button>
+        </form>
+    </div>
+</div>
+</section>
+
+<div th:replace="fragments/footer :: footer"></div>
+
+</body>
+</html>

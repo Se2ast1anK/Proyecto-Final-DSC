@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<header th:fragment="header(currentPage, isUserAuthenticated, username)" class="p-3 bg-dark text-white">
+    <div class="container-fluid">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="header-logo"><h2>RETI</h2></a>
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li th:if="${isUserAuthenticated}">
+                    <a th:href="@{/admin/admins}" th:class="${currentPage == 'admins' ? 'nav-link px-2  text-secondary' : 'nav-link px-2 text-white'}">
+                        Administrador
+                    </a>
+                </li>
+                <li th:if="${isUserAuthenticated}">
+                    <a th:href="@{/admin/users}" th:class="${currentPage == 'users' ? 'nav-link px-2 text-secondary' : 'nav-link px-2 text-white'}">
+                        Usuarios
+                    </a>
+                </li>
+                <li th:if="${isUserAuthenticated}">
+                    <a th:href="@{/admin/recipes}" th:class="${currentPage == 'recipes' ||currentPage == 'recipes-public' ? 'nav-link px-2 text-secondary' : 'nav-link px-2 text-white'}">
+                        Recetas
+                    </a>
+                </li>
+                <li th:if="${isUserAuthenticated}">
+                    <a th:href="@{/admin/tips}" th:class="${currentPage == 'tips' ||currentPage == 'tips-public' ? 'nav-link px-2 text-secondary' : 'nav-link px-2 text-white'}">
+                        Tips
+                    </a>
+                </li>
+                <li th:if="${!isUserAuthenticated}">
+                    <a th:href="@{/recipes}" th:class="${currentPage == 'recipes' ||currentPage == 'recipes-public' ? 'nav-link px-2 text-secondary' : 'nav-link px-2 text-white'}">
+                        Recetas
+                    </a>
+                </li>
+                <li th:if="${!isUserAuthenticated}">
+                    <a th:href="@{/tips}" th:class="${currentPage == 'tips' ||currentPage == 'tips-public' ? 'nav-link px-2 text-secondary' : 'nav-link px-2 text-white'}">
+                        Tips
+                    </a>
+                </li>
+            </ul>
+
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                <input type="search" class="form-control form-control-dark" placeholder="Busca..." aria-label="Search">
+            </form>
+
+            <div class="text-end">
+                <span th:if="${username != null && username != ''}" th:text="${'Hola, ' + username}"></span>
+                <a th:if="${!isUserAuthenticated}" th:href="@{/login}" class="auth-btn login-btn">
+                    Iniciar Sesión
+                </a>
+                <a th:if="${isUserAuthenticated}" th:href="@{/logout}" class="auth-btn logout-btn">
+                    Cerrar Sesión
+                </a>
+                <!--<a th:unless="${currentPage == 'recipes-public' || currentPage == 'tips-public'}" th:href="@{/logout}" class="auth-btn logout-btn">
+                    Cerrar Sesión
+                </a>-->
+            </div>
+        </div>
+    </div>
+</header>
+</body>
+</html>
