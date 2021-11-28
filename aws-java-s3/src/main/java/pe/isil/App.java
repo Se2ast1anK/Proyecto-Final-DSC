@@ -29,7 +29,7 @@ public class App {
         //Secret-Key
 
 
-        AWSCredentials credentials = new BasicAWSCredentials("AKIA46CZA5EPNLQE6OGC","1+9itd8I4bTXfLujbPWFBDcL2sFHeJNARkkNm3EF");
+        AWSCredentials credentials = new BasicAWSCredentials("","");
 
         AmazonS3 s3Client = AmazonS3ClientBuilder.standard()
                 .withRegion(Regions.US_EAST_1)

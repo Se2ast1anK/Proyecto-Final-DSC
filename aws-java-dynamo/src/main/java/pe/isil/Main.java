@@ -25,8 +25,8 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Iniciando AWS DynamoDB en Reti");
 
-        AWSCredentials credentials = new BasicAWSCredentials("AKIA46CZA5EPNLQE6OGC",
-                "1+9itd8I4bTXfLujbPWFBDcL2sFHeJNARkkNm3EF");
+        AWSCredentials credentials = new BasicAWSCredentials("",
+                "");
 
 
         AmazonDynamoDB dynamoDBClient = AmazonDynamoDBClientBuilder
