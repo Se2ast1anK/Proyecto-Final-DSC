@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="49324d4c-f3ca-4d3d-bd40-641467b38bc2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -7,7 +16,17 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProjectId" id="21YPAR9x16rXlZI9qzgQ97Q2UKs" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="D:/Documentos/ISIL/ultimoCiclo/Cloud/ep3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ep3" />
+  </component>
+  <component name="RunManager">
+    <configuration name="ApplicationSecurity" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="04-grupo8-security" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pe.isil.ApplicationSecurity" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
 </project>
